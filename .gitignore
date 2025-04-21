@@ -1,0 +1,9 @@
+# Credentials
+aws-credentials/
+gcp-credentials/
+
+# files
+.env
+secrets.txt
+*.key
+*.pem
