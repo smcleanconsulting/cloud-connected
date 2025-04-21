@@ -1,9 +1,49 @@
-# Credentials
+# Shell logs and scripts
+*.log
+*.sh~
+*.bak
+
+# Podman runtime files
+podman.sock
+*.pid
+*.pid.lock
+
+# Container volumes and mount points (if stored locally)
 aws-credentials/
 gcp-credentials/
+workspace/
 
-# files
+# Secrets & configs
 .env
-secrets.txt
+.env.local
+*.secret
 *.key
 *.pem
+
+# System junk
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Build artifacts (if you compile anything locally)
+dist/
+build/
+output/
+*.o
+*.out
+
+# Custom overrides
+docker-compose.override.yml
+*.local.yml
+*.localdev/
+
+# Python virtualenv (in case scripts use it)
+venv/
+__pycache__/
+*.py[cod]
