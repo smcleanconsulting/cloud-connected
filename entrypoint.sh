@@ -15,6 +15,16 @@ runroot = "/run/containers/storage"
 graphroot = "/var/lib/containers/storage"
 EOF
 
+# Start Docker daemon in the background
+dockerd &
+
+# Wait for Docker to start (adjust sleep time if needed)
+sleep 5
+
+# Verify Docker and Docker Compose are working
+docker --version
+docker compose version
+
 # Give container process time to start
 sleep 2
 
