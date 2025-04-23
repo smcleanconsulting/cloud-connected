@@ -19,14 +19,17 @@ EOF
 dockerd &
 
 # Wait for Docker to start (adjust sleep time if needed)
-sleep 5
+while ! docker info >/dev/null 2>&1; do
+    echo "Waiting for Docker to start..."
+    sleep 1
+done
 
-# Verify Docker and Docker Compose are working
-docker --version
-docker compose version
+# # Verify Docker and Docker Compose are working
+# docker --version
+# docker compose version
 
-# Give container process time to start
-sleep 2
+# # Give container process time to start
+# sleep 2
 
 # If command was passed to container, execute it, otherwise run bash
 if [ $# -gt 0 ]; then

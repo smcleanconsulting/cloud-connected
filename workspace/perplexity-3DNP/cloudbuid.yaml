@@ -1,0 +1,25 @@
+# cloudbuild.yaml
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'build',
+    '-t',
+    '${_LOCATION}-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}/n8n:${_TAG}',
+    '.'
+  ]
+  id: 'build-image'
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'push',
+    '${_LOCATION}-docker.pkg.dev/${_PROJECT_ID}/${_REPOSITORY}/n8n:${_TAG}'
+  ]
+  id: 'push-image'
+
+substitutions:
+  _LOCATION: 'us-east1'
+  _REPOSITORY: 'n8n-podman'
+  _TAG: 'latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

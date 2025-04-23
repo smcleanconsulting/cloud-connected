@@ -1,6 +1,6 @@
 #!/bin/bash
 
-podman run -d \
+podman run -it \
   --name cloud-connected \
   --platform linux/arm64 \
   --privileged \
@@ -12,4 +12,4 @@ podman run -d \
   -v ~/Podman\ Volumes/cloud-connected/terraform-projects:/home/cloud-user/terraform:Z \
   -v ~/Podman\ Volumes/cloud-connected/workspace:/home/cloud-user:Z \
   -p 8080:8080 \
-  cloud-connected:latest sleep infinity
+  cloud-connected:latest

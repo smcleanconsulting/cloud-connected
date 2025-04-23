@@ -11,7 +11,6 @@ podman.sock
 # Container volumes and mount points (if stored locally)
 aws-credentials/
 gcp-credentials/
-workspace/
 
 # Secrets & configs
 .env
