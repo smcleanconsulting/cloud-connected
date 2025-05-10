@@ -1,8 +1,8 @@
 {
-  "name": "gemini-killswitch-engage",
+  "name": "cloud-functions-2ndgen-billing",
   "private": true,
   "version": "0.0.1",
-  "description": "Billing killswitch deployed to Cloud Run (2nd Gen Cloud Function)",
+  "description": "Billing killswitch for Cloud Functions 2nd Gen (Pub/Sub trigger)",
   "main": "index.js",
   "engines": {
     "node": "^22.0.0"
@@ -13,8 +13,8 @@
   "author": "Ace Nassri <anassri@google.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
     "@google-cloud/billing": "^5.0.0",
-    "google-auth-library": "^9.0.0",
-    "express": "^4.18.2"
+    "google-auth-library": "^9.0.0"
   }
 }
